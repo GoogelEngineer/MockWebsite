@@ -94,21 +94,53 @@
     });
   });
 
-  const checkout = document.getElementById('checkout-btn');
+  
+const checkout = document.getElementById('checkout-btn');
 
-  if (checkout) {
-    checkout.addEventListener('click', () => {
-      if (!readCart()) return;
+if (checkout) {
+  const downloadConsent =
+    document.getElementById('download-consent');
+  const withdrawalConsent =
+    document.getElementById('withdrawal-consent');
+  const error =
+    document.getElementById('consent-error');
 
-      const out = document.getElementById('order-result');
-      out.hidden = false;
-      out.textContent =
-        'Simulation abgeschlossen. Es wurde keine Bestellung übermittelt, kein Vertrag geschlossen und keine Zahlung ausgelöst.';
+  const validateCheckout = () => {
+    const valid =
+      downloadConsent.checked &&
+      withdrawalConsent.checked;
 
-      writeCart(false);
-      out.focus();
-    });
-  }
+    checkout.disabled = !readCart() || !valid;
+    return valid;
+  };
+
+  downloadConsent.addEventListener('change', validateCheckout);
+  withdrawalConsent.addEventListener('change', validateCheckout);
+
+  checkout.addEventListener('click', () => {
+    if (!readCart() || !validateCheckout()) {
+      error.textContent =
+        'Bitte bestätigen Sie beide Erklärungen.';
+      return;
+    }
+
+    const out = document.getElementById('order-result');
+    out.hidden = false;
+    out.textContent =
+      'Die Bestellung wurde erfolgreich simuliert. ' +
+      'Es ist kein Kaufvertrag zustande gekommen. ' +
+      'Es wurde keine Zahlung ausgelöst.';
+
+    writeCart(false);
+    downloadConsent.checked = false;
+    withdrawalConsent.checked = false;
+    validateCheckout();
+    out.focus();
+  });
+
+  validateCheckout();
+}
+
 
   const menu = document.querySelector('[data-menu-toggle]');
 
@@ -240,6 +272,13 @@
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
+
+
+  
+  const consentScript = document.createElement('script');
+  consentScript.src = 'assets/js/consent.js';
+  document.body.append(consentScript);
+  
 
   updateCart();
 })();

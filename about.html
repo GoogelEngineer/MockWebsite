@@ -1,26 +1,151 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Fiktives Unternehmen und drei noch zu definierende Markenformen.">
-  <title>Über uns · Studio Demo</title>
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/main.js" defer></script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Fiktive ModernPlan GmbH und drei Markenformen: Wortmarke, Bildmarke und Bewegungsmarke." name="description"/>
+<title>Über uns · ModernPlan</title>
+<link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+<style>
+/* Nur für die About-Seite: unabhängig von globalen CSS-Änderungen. */
+.about-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.about-fact{border-top:2px solid #d76541;padding:17px 12px 10px 0}
+.about-fact dt{color:#596277;font-size:.74rem;letter-spacing:.04em}
+.about-fact dd{font-weight:730;margin:6px 0 0}
+.about-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:65px;align-items:start}
+.about-intro h2,.brand-section-title{font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:-.05em;margin:9px 0 16px}
+.about-copy{border-left:3px solid #d76541;background:#fff;padding:22px 26px;line-height:1.8}
+.about-placeholder{font-size:.9rem;color:#526075}
+.brand-forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.brand-form{background:white;border:1px solid #d9dce1;padding:24px;min-width:0;display:flex;flex-direction:column}
+.brand-form-type{color:#965136;font-size:.7rem;font-weight:800;letter-spacing:.13em}
+.brand-stage{height:190px;background:#f1f2f3;display:grid;place-items:center;margin:20px 0 23px;overflow:hidden}
+.brand-stage-word{font-weight:800;font-size:clamp(1.35rem,2.3vw,2.1rem);letter-spacing:-.055em}
+.brand-form h3{font-size:1.25rem;margin:0 0 8px}
+.brand-form p{color:#526075;font-size:.88rem;line-height:1.75}
+.brand-form .brand-form-foot{margin-top:auto;padding-top:18px;border-top:1px solid #e6e8eb;font-size:.78rem;color:#526075}
+.brand-mark{display:grid;grid-template-columns:repeat(2,30px);grid-template-rows:repeat(2,30px);gap:9px;transform:rotate(-18deg)}
+.brand-mark i{display:block;width:30px;height:30px;background:#d76541}
+.brand-mark i:nth-child(2){background:#e5aa91}.brand-mark i:nth-child(3){background:#263b5b}.brand-mark i:nth-child(4){background:#8091ae}
+.motion-mark i{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.65)}
+.motion-mark i:nth-child(1){--tx:-35px;--ty:-32px;animation-delay:.08s}
+.motion-mark i:nth-child(2){--tx:36px;--ty:-30px;animation-delay:.23s}
+.motion-mark i:nth-child(3){--tx:-38px;--ty:34px;animation-delay:.38s}
+.motion-mark i:nth-child(4){--tx:37px;--ty:34px;animation-delay:.53s}
+.motion-mark.is-playing i{animation-name:assemble-mark;animation-duration:.75s;animation-timing-function:cubic-bezier(.2,.8,.2,1);animation-fill-mode:forwards}
+@keyframes assemble-mark{to{opacity:1;transform:translate(0,0) scale(1)}}
+.motion-actions{display:flex;justify-content:center;margin-top:14px}
+.motion-replay{background:white;border:1px solid #8792a2;color:#19253b;padding:8px 14px;border-radius:3px;font-size:.83rem}
+.motion-replay:hover{background:#f0f2f4}
+.mark-disclaimer{margin-top:26px;padding:16px 20px;border-left:3px solid #d76541;background:#f5ebe4;font-size:.85rem;line-height:1.6}
+.brand-classes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:25px}
+.brand-class{padding:21px;background:white;border:1px solid #d9dce1}
+.brand-class strong{display:block;margin-bottom:6px}
+@media(max-width:850px){.brand-forms{grid-template-columns:1fr}.about-intro{grid-template-columns:1fr;gap:20px}.brand-stage{height:170px}}
+@media(max-width:520px){.about-facts{grid-template-columns:1fr}.brand-classes{grid-template-columns:1fr}.brand-form{padding:20px}}
+@media(prefers-reduced-motion:reduce){.motion-mark i{opacity:1;transform:none;animation:none!important}.motion-actions{display:none}}
+</style></head>
 <body>
 <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
-<div class="demo-banner"><span class="banner-dot" aria-hidden="true"></span> Studienprojekt · Fiktives Unternehmen · Keine echten Käufe</div>
+<div class="demo-banner"><span aria-hidden="true" class="banner-dot"></span> Studienprojekt · Fiktives Unternehmen · Keine echten Käufe</div>
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="Studio Demo – Startseite"><span class="brand-sign" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>STUDIO<span class="brand-light">/DEMO</span></span></a>
-    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle><span class="menu-icon" aria-hidden="true">☰</span><span>Menü</span></button>
-    <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation"><a href="index.html" >Start</a><a href="produkt.html" >Produkt</a><a href="preise.html" >Preise</a><a href="about.html" aria-current="page" >Über uns</a><a class="cart-nav" href="warenkorb.html" >Warenkorb <span class="cart-count" data-cart-count aria-label="0 Artikel">0</span></a></nav>
-  </div>
+<div class="wrap header-inner">
+<a aria-label="ModernPlan – Startseite" class="brand" href="index.html"><span aria-hidden="true" class="brand-sign"><span></span><span></span><span></span><span></span></span><span>ModernPlan</span></a>
+<button aria-controls="main-navigation" aria-expanded="false" class="menu-toggle" data-menu-toggle="" type="button"><span aria-hidden="true" class="menu-icon">☰</span><span>Menü</span></button>
+<nav aria-label="Hauptnavigation" class="main-nav" id="main-navigation"><a href="index.html">Start</a><a href="produkt.html">Produkt</a><a href="preise.html">Preise</a><a aria-current="page" href="about.html">Über uns</a><a class="cart-nav" href="warenkorb.html">Warenkorb <span aria-label="0 Artikel" class="cart-count" data-cart-count="">0</span></a></nav>
+</div>
 </header>
-<main id="main" tabindex="-1"><section class="page-hero wrap"><div class="section-kicker">ÜBER UNS / 03</div><h1>Identität.<br><em>In drei Formen.</em></h1><p>[EIGENLEISTUNG: Beschreibung des fiktiven Unternehmens, seines Standorts, Teams und Unternehmensgegenstands.]</p></section><section class="wrap section compact"><div class="brand-demo-grid"><article class="brand-demo"><span>01 / WORTMARKE</span><div class="demo-word">[NAME]</div><h2>Wortmarke</h2><p>[EIGENLEISTUNG: Bedeutung, Herkunft und Nizza-Klassen.]</p></article><article class="brand-demo"><span>02 / BILDMARKE</span><div class="demo-image" aria-label="Temporäres grafisches Platzhaltersymbol, keine finale Marke"><svg viewBox="0 0 120 120" width="100" height="100" aria-hidden="true"><rect x="15" y="15" width="90" height="90" rx="23" fill="none" stroke="currentColor" stroke-width="4"/><path d="M33 77L52 54L67 65L88 37" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></div><h2>Bildmarke</h2><p>[EIGENLEISTUNG: Bedeutung, Gestaltung und Nizza-Klassen.]</p></article><article class="brand-demo"><span>03 / POSITIONSMARKE</span><div class="demo-position"><div class="position-window"><span></span><span></span><span></span><b>▰</b></div></div><h2>Positionsmarke</h2><p>[EIGENLEISTUNG: Schutzgegenstand, Position, Verwendung und Nizza-Klassen.]</p></article></div><div class="about-warning"><strong>Markenrecherche ausstehend.</strong> Alle dargestellten Formen sind Arbeitsillustrationen und keine registrierten Marken.</div></section><section class="wrap section compact"><section class="editorial"  aria-label="Offener Eigenleistungstext: Unternehmen und Markenkonzept"><div class="editorial-top"><span class="editorial-tag">EIGENLEISTUNG AUSSTEHEND</span><span class="editorial-icon" aria-hidden="true">✎</span></div><h2>Unternehmen und Markenkonzept</h2><p class="editorial-hint">Eigene Darstellung von Geschäftsmodell, Team, Unternehmensidentität, drei Markenformen, deren Bedeutung und Zuordnung zu den Waren-/Dienstleistungsklassen.</p><p class="editorial-note">Dieser Bereich ist ein redaktioneller Platzhalter und kein veröffentlichungsfertiger Rechtstext.</p></section></section></main>
-<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="index.html"><span class="brand-sign" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>STUDIO<span class="brand-light">/DEMO</span></span></a><p>Demonstrationswebsite im Rahmen einer Lehrveranstaltung. Alle Angebote und Unternehmensangaben sind fiktiv.</p></div><div><h2>Informationen</h2><nav aria-label="Rechtliche Informationen"><a href="lizenz.html">Lizenz</a><a href="datenschutz.html">Datenschutz</a><a href="barrierefreiheit.html">Barrierefreiheit</a><a href="impressum.html">Impressum</a></nav></div><div><h2>Weitere Seiten</h2><nav aria-label="Weitere Informationen"><a href="kontakt.html">Kontakt</a><a href="warenkorb.html">Warenkorb</a></nav></div></div><div class="wrap footer-bottom"><span>© <span data-year>2026</span> Studio Demo · Vorläufige Arbeitsmarke</span><a href="barrierefreiheit.html">Barrierefreiheit</a></div></footer>
-<div id="status-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
-</body></html>
+
+<main id="main" tabindex="-1">
+<section class="page-hero wrap">
+<div class="section-kicker">ÜBER UNS / MODERNPLAN</div>
+<h1>Über uns.<br/><em>Unsere Identität.</em></h1>
+<p>ModernPlan GmbH ist ein österreichisches Softwareunternehmen mit Sitz in Wien. Es entwickelt Softwarelösungen für die Planung und Organisation von Projekten. Wir bemühen uns um effiziente, einfache und menschenorientierte Lösungen.</p>
+<dl aria-label="Unternehmensdaten" class="about-facts">
+<div class="about-fact"><dt>Unternehmen</dt><dd>ModernPlan GmbH</dd></div>
+<div class="about-fact"><dt>Gegründet</dt><dd>2026</dd></div>
+<div class="about-fact"><dt>Standort / Team</dt><dd>Wien · 3 Personen</dd></div>
+</dl>
+</section>
+<section aria-labelledby="company-heading" class="wrap section compact">
+<div class="about-intro">
+<div>
+<div class="section-kicker">01 / DAS UNTERNEHMEN</div>
+<h2 id="company-heading">ModernPlan GmbH</h2>
+<p class="about-placeholder">Fiktives österreichisches Softwareunternehmen · Zielgruppe: Privatpersonen, Selbstständige und Unternehmen.</p>
+<p class="about-placeholder">Geschäftsanschrift: Schmied-Friedreich Plaza 1 · 1010 Wien</p>
+</div>
+<div class="about-copy">
+<span class="editorial-tag">UNTERNEHMENSBILD</span>
+<p>ModernPlan GmbH wurde im November 2026 von einem ambitionierten Team gegründet, mit dem Ziel eine simple und überschaubare Softwarelösung zur Planung und Organisation von Projekten zu entwickeln.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="marks-heading" class="section soft">
+<div class="wrap">
+<div class="section-kicker">02 / UNSERE MARKEN</div>
+<h2 class="brand-section-title" id="marks-heading">Drei Formen. Ein Unternehmen.</h2>
+<p class="about-placeholder">Die drei Marken dienen der Kennzeichnung der Software ModernPlan.</p>
+<div class="brand-forms">
+<article aria-labelledby="wordmark-heading" class="brand-form">
+<div class="brand-form-type">01 / WORTMARKE</div>
+<div class="brand-stage"><span class="brand-stage-word">ModernPlan</span></div>
+<h3 id="wordmark-heading">Wortmarke</h3>
+<p>Das Ziel unseres Unternehmens ist eine einfache und moderne Lösung für effizientes Projektmanagement. Daraus leitet sich auch der Name ModernPlan ab. Zeitgemäße Software für organisatorische Arbeit. Die Bezeichnung ist sowohl Unternehmens- als auch Produktname.</p>
+</article>
+<article aria-labelledby="imagemark-heading" class="brand-form">
+<div class="brand-form-type">02 / BILDMARKE</div>
+<div aria-label="Vier farbige, in einem leicht gedrehten Raster angeordnete Quadrate" class="brand-stage" role="img">
+<span aria-hidden="true" class="brand-mark"><i></i><i></i><i></i><i></i></span>
+</div>
+<h3 id="imagemark-heading">Bildmarke</h3>
+<p>Das Logo unseres Unternehmens besteht aus vier färbigen, rotierten Quadraten. Sie verdeutlichen unsere Mission; eine einfache, elegante Lösung zu entwickeln.</p>
+</article>
+<article aria-labelledby="motionmark-heading" class="brand-form">
+<div class="brand-form-type">03 / BEWEGUNGSMARKE</div>
+<div>
+<div aria-label="Animation: Vier farbige Quadrate bewegen sich aus verschiedenen Richtungen in ein gedrehtes Raster" class="brand-stage" role="img">
+<span aria-hidden="true" class="brand-mark motion-mark is-playing" id="motion-mark"><i></i><i></i><i></i><i></i></span>
+</div>
+<div class="motion-actions"><button class="motion-replay" id="motion-replay" type="button">Animation abspielen</button></div>
+</div>
+<h3 id="motionmark-heading">Bewegungsmarke</h3>
+<p>Die Bewegungsmarke baut auf der  Bildmarke auf, indem sich die vier Quadrate zusammenbewegen und sich zu einem Logo zusammensetzen. Die Bewegung symbolisiert das Zusammensetzen verschiedener Aufgaben zu einem Projekt.</p>
+</article>
+</div>
+</section>
+
+<section class="wrap section compact"
+         aria-labelledby="classification-heading">
+
+  <div class="section-kicker">
+    03 / KLASSIFIKATION UND RECHERCHE
+  </div>
+
+<h2 class="brand-section-title" id="classification-heading">Markenschutz und Nizza-Klassen.</h2>
+<div class="brand-classes">
+<div class="brand-class"><strong>Nizza-Klasse 9</strong><p>Herunterladbare Software zur Organisation von Projekten.</p></div>
+<div class="brand-class"><strong>Recherche und Rechtsstatus</strong><p>Am 6.11.26 wurde eine Recherche auf Markenrechtskonflikte durchgeführt, wobei keine kollidierenden Marken gefunden wurden. Es wurden die Datenbanken TMview und WIPO verwendet und auf die Suchbegriffe "ModernPlan", "Modern Plan" und "Modern*Plan"geprüft. Die Datenbank TMview wurde auch auf die Bildmarke untersucht.</p></div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="index.html"><span aria-hidden="true" class="brand-sign"><span></span><span></span><span></span><span></span></span><span>ModernPlan</span></a><p>Demonstrationswebsite im Rahmen einer Lehrveranstaltung. Alle Angebote und Unternehmensangaben sind fiktiv.</p></div><div><h2>Informationen</h2><nav aria-label="Rechtliche Informationen"><a href="lizenz.html">Lizenz</a><a href="ruecktritt.html">Widerruf</a><a href="datenschutz.html">Datenschutz</a><a href="barrierefreiheit.html">Barrierefreiheit</a><a href="impressum.html">Impressum</a></nav></div><div><h2>Weitere Seiten</h2><nav aria-label="Weitere Informationen"><a href="kontakt.html">Kontakt</a><a href="warenkorb.html">Warenkorb</a></nav></div></div><div class="wrap footer-bottom"><span>© <span data-year="">2026</span> ModernPlan · Fiktive Projektmarke</span><a href="barrierefreiheit.html">Barrierefreiheit</a></div></footer>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="status-live" role="status"></div>
+<script>
+(() => {
+  const button = document.getElementById('motion-replay');
+  const mark = document.getElementById('motion-mark');
+  if (!button || !mark) return;
+  button.addEventListener('click', () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    mark.classList.remove('is-playing');
+    // Force a style recalculation so the animation can restart.
+    void mark.offsetWidth;
+    mark.classList.add('is-playing');
+  });
+})();
+</script></body></html>

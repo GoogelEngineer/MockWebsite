@@ -1,4 +1,4 @@
-# Studio Demo – statischer Webshop (Arbeitsstand)
+# ModernPlan – statischer Webshop (Arbeitsstand)
 
 Dies ist eine **fiktive Studienwebsite** ohne echte Produkte, Bestellungen oder Zahlungsabwicklung.
 

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="de">
 <head>
@@ -5,22 +6,311 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="description" content="Simulierter Bestellprozess ohne Zahlung oder Vertragsschluss.">
-  <title>Warenkorb · Studio Demo</title>
+  <title>Warenkorb · ModernPlan</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
-<div class="demo-banner"><span class="banner-dot" aria-hidden="true"></span> Studienprojekt · Fiktives Unternehmen · Keine echten Käufe</div>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="Studio Demo – Startseite"><span class="brand-sign" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>STUDIO<span class="brand-light">/DEMO</span></span></a>
-    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle><span class="menu-icon" aria-hidden="true">☰</span><span>Menü</span></button>
-    <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation"><a href="index.html" >Start</a><a href="produkt.html" >Produkt</a><a href="preise.html" >Preise</a><a href="about.html" >Über uns</a><a class="cart-nav" href="warenkorb.html" aria-current="page">Warenkorb <span class="cart-count" data-cart-count aria-label="0 Artikel">0</span></a></nav>
+  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+
+  <div class="demo-banner">
+    <span class="banner-dot" aria-hidden="true"></span>
+    Studienprojekt · Fiktives Unternehmen · Keine echten Käufe
   </div>
-</header>
-<main id="main" tabindex="-1"><section class="page-hero wrap"><div class="section-kicker">CHECKOUT / SIMULATION</div><h1>Dein Warenkorb.</h1><p>Demonstrationsprozess ohne Vertragsschluss, Zahlung oder Übermittlung personenbezogener Bestelldaten.</p></section><section class="wrap section compact"><div class="checkout-grid"><div><div class="cart-box" id="cart-items"><p>Warenkorb wird geladen.</p></div><div class="cart-explain"><section class="editorial"  aria-label="Offener Eigenleistungstext: Verbraucherinformationen vor dem Kauf"><div class="editorial-top"><span class="editorial-tag">EIGENLEISTUNG AUSSTEHEND</span><span class="editorial-icon" aria-hidden="true">✎</span></div><h2>Verbraucherinformationen vor dem Kauf</h2><p class="editorial-hint">Vertragsgegenstand, Preis, digitale Bereitstellung, Rücktritt, Gewährleistung und etwaige weitere vorvertragliche Informationen selbst verfassen.</p><p class="editorial-note">Dieser Bereich ist ein redaktioneller Platzhalter und kein veröffentlichungsfertiger Rechtstext.</p></section></div></div><aside class="summary-card" aria-labelledby="summary-title"><span class="section-kicker">BESTELLÜBERSICHT</span><h2 id="summary-title">Zusammenfassung</h2><div class="summary-line"><span>Artikel</span><strong id="summary-items">0</strong></div><div class="summary-line"><span>Gesamtbetrag (Simulation)</span><strong id="summary-total">€ 0,00</strong></div><p class="summary-small">Der angezeigte Betrag ist fiktiv. Es findet keine Zahlung statt.</p><button id="checkout-btn" class="button button-primary button-block" type="button" disabled>Simulation abschließen <span aria-hidden="true">↗</span></button><div id="order-result" class="order-result" role="status" aria-live="polite" hidden tabindex="-1"></div><p class="summary-small"><a href="lizenz.html">Lizenzbedingungen</a> · <a href="datenschutz.html">Datenschutz</a></p></aside></div></section></main>
-<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="index.html"><span class="brand-sign" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>STUDIO<span class="brand-light">/DEMO</span></span></a><p>Demonstrationswebsite im Rahmen einer Lehrveranstaltung. Alle Angebote und Unternehmensangaben sind fiktiv.</p></div><div><h2>Informationen</h2><nav aria-label="Rechtliche Informationen"><a href="lizenz.html">Lizenz</a><a href="datenschutz.html">Datenschutz</a><a href="barrierefreiheit.html">Barrierefreiheit</a><a href="impressum.html">Impressum</a></nav></div><div><h2>Weitere Seiten</h2><nav aria-label="Weitere Informationen"><a href="kontakt.html">Kontakt</a><a href="warenkorb.html">Warenkorb</a></nav></div></div><div class="wrap footer-bottom"><span>© <span data-year>2026</span> Studio Demo · Vorläufige Arbeitsmarke</span><a href="barrierefreiheit.html">Barrierefreiheit</a></div></footer>
-<div id="status-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
-</body></html>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"
+         aria-label="ModernPlan – Startseite">
+        <span class="brand-sign" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span>MODERN<span class="brand-light">PLAN</span></span>
+      </a>
+
+      <button type="button" class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="main-navigation"
+              data-menu-toggle>
+        <span class="menu-icon" aria-hidden="true">☰</span>
+        <span>Menü</span>
+      </button>
+
+      <nav class="main-nav" id="main-navigation"
+           aria-label="Hauptnavigation">
+        <a href="index.html">Start</a>
+        <a href="produkt.html">Produkt</a>
+        <a href="preise.html">Preise</a>
+        <a href="about.html">Über uns</a>
+        <a class="cart-nav" href="warenkorb.html"
+           aria-current="page">
+          Warenkorb
+          <span class="cart-count" data-cart-count
+                aria-label="0 Artikel">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-hero wrap">
+      <div class="section-kicker">CHECKOUT / SIMULATION</div>
+      <h1>Dein Warenkorb.</h1>
+      <p>
+        Simulation ohne Vertrag,
+        Zahlung oder Übermittlung personenbezogener Daten!
+      </p>
+    </section>
+
+    <section class="wrap section compact">
+      <div class="checkout-grid">
+
+        <!-- Warenkorb und Verbraucherinformationen -->
+        <div>
+          <div class="cart-box" id="cart-items">
+            <p>Warenkorb wird geladen.</p>
+          </div>
+
+          
+        <div class="cart-explain">
+          <section class="consumer-info" aria-labelledby="consumer-title">
+          
+            <span class="section-kicker">INFORMATIONEN ZUM KAUF</span>
+            <h2 id="consumer-title">Verbraucherinformationen vor dem Kauf</h2>
+          
+            <div class="consumer-info-item">
+              <h3>Produkt und Leistungsumfang</h3>
+              <p>
+                Standardlizenz für die Projektmanagement-Software ModernPlan.
+              </p>
+            </div>
+          
+            <div class="consumer-info-item">
+              <h3>Systemanforderungen, Kompatibilität und Zugang</h3>
+              <p>
+                Die Software wird nach dem Kauf sofort
+                elektronisch mithilfe eines Downloads bereitgestellt.
+                Die Systemanforderungen sind auf der
+                <a href="produkt.html">Produktseite</a> angegeben.
+              </p>
+            </div>
+
+            <div class="consumer-info-item">
+              <h3>Nutzungsrechte</h3>
+              <p>
+                Mit dem Kauf wird ein zeitlich unbegrenztes und nicht übertragbares
+                einfaches Nutzungsrecht
+                auf bis zu drei Geräten bereitgestellt. Weitere
+                Informationen finden Sie
+                in den <a href="lizenz.html">Lizenzbedingungen</a>.
+              </p>
+            </div>
+          
+            <div class="consumer-info-item">
+              <h3>Rücktrittsrecht</h3>
+              <p>
+                Verbraucher haben ein gesetzliches Rücktrittsrecht
+                von 14 Tagen. Bei digitalen Inhalten, kann dieses Recht entfallen.
+              </p>
+              <p>
+                <p>
+                  <a href="ruecktritt.html">
+                    Vollständige Widerrufsbelehrung und
+                    gesetzliches Muster-Widerrufsformular
+                  </a>
+                </p>
+              </p>
+            </div>
+
+            <div class="consumer-info-item">
+              <h3>Preis</h3>
+              <p>
+                Der Kaufpreis beträgt 49,00 Eur einschließlich
+                Umsatzsteuer. Es fallen keine weiteren Kosten an.
+              </p>
+            </div>
+          
+
+            <div class="consumer-info-item">
+              <h3>Gesetzliche Gewährleistung</h3>
+              <p>
+                Für die Software gelten die gesetzlichen
+                Gewährleistungsrechte.
+              </p>
+            </div>
+          
+          
+            <div class="consumer-info-item">
+              <h3>Vertragspartner und Kontakt</h3>
+              <p>
+                ModernPlan; Schmied-Friedreich Plaza 1 · 1010 Wien; ModernPlanSupport@modernplan.com
+              </p>
+              <p>
+                Weitere Information werden im
+                <a href="impressum.html">Impressum</a> bereitgestellt.
+              </p>
+            </div>
+          
+            <p class="consumer-info-note">
+              <strong>Hinweis</strong>
+              Kaufvorgänge werden ausschließlich simuliert! Alle Angaben zu Firma und Produkt sind fiktiv!
+            </p>
+          
+          </section>
+        </div>
+
+        </div>
+
+        <!-- Bestellübersicht -->
+        <aside class="summary-card" aria-labelledby="summary-title">
+
+          <span class="section-kicker">BESTELLÜBERSICHT</span>
+
+          <h2 id="summary-title">Zusammenfassung</h2>
+
+          <div class="summary-line">
+            <span>Artikel</span>
+            <strong id="summary-items">0</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Gesamtbetrag (Simulation)</span>
+            <strong id="summary-total">€ 0,00</strong>
+          </div>
+
+          <p class="summary-small">
+            Der angezeigte Betrag ist fiktiv.
+            Es findet keine Zahlung statt.
+          </p>
+
+          <!-- Erklärungen zum digitalen Download -->
+          <section class="checkout-consent"
+                   aria-labelledby="consent-title">
+
+            <h3 id="consent-title">
+              Erklärungen zum digitalen Download
+            </h3>
+
+            <p>
+              Bitte lesen Sie vor der Bestellung die
+              <a href="lizenz.html">Lizenzbedingungen</a>
+              und die Informationen zum gesetzlichen
+              Rücktrittsrecht.
+            </p>
+
+            <div class="consent-option">
+              <input type="checkbox" id="download-consent">
+              <label for="download-consent">
+                Ich stimme ausdrücklich zu, dass die Bereitstellung
+                der digitalen Inhalte vor Ablauf der 14-tägigen
+                Rücktrittsfrist beginnt.
+              </label>
+            </div>
+
+            <div class="consent-option">
+              <input type="checkbox" id="withdrawal-consent">
+              <label for="withdrawal-consent">
+                Ich bestätige, dass ich zur Kenntnis genommen habe,
+                dass ich durch den vorzeitigen Beginn der
+                Bereitstellung unter den gesetzlichen Voraussetzungen
+                mein Rücktrittsrecht verliere.
+              </label>
+            </div>
+
+            <p id="consent-error" class="form-error"
+               role="alert"></p>
+
+            <p class="demo-notice">
+              <strong>Bestellsimulation:</strong>
+              Es werden keine Verträge abgeschlossen und
+              keine Zahlungen durchgeführt.
+            </p>
+
+            <button id="checkout-btn"
+                    class="button button-primary button-block"
+                    type="button" disabled>
+              Zahlungspflichtig bestellen
+            </button>
+
+          </section>
+
+          <!-- Ergebnis der Simulation -->
+          <div id="order-result"
+               class="order-result"
+               role="status"
+               aria-live="polite"
+               hidden
+               tabindex="-1">
+          </div>
+
+          <p class="summary-small">
+            <a href="lizenz.html">Lizenzbedingungen</a>
+            ·
+            <a href="datenschutz.html">Datenschutz</a>
+          </p>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-sign" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>MODERN<span class="brand-light">PLAN</span></span>
+        </a>
+
+        <p>
+          Demonstrationswebsite im Rahmen einer Lehrveranstaltung.
+          Alle Angebote und Unternehmensangaben sind fiktiv.
+        </p>
+      </div>
+
+      <div>
+        <h2>Informationen</h2>
+        <nav aria-label="Rechtliche Informationen">
+          <a href="lizenz.html">Lizenz</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="barrierefreiheit.html">Barrierefreiheit</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+
+      <div>
+        <h2>Weitere Seiten</h2>
+        <nav aria-label="Weitere Informationen">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="warenkorb.html">Warenkorb</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>
+        © <span data-year>2026</span> ModernPlan
+        · Vorläufige Arbeitsmarke
+      </span>
+
+      <a href="barrierefreiheit.html">Barrierefreiheit</a>
+    </div>
+  </footer>
+
+  <div id="status-live"
+       class="sr-only"
+       role="status"
+       aria-live="polite"
+       aria-atomic="true">
+  </div>
+
+</body>
+</html>
