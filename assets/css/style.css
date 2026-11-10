@@ -141,3 +141,35 @@
   border-radius: 6px;
 }
 
+
+/* WCAG 2.2 AA – Kontrastkorrekturen */
+
+/* Produktvorschau und Dashboard */
+.hero-caption,
+[data-preview-counter],
+.dash-overline,
+.dash-cards small,
+.dash-tasks-head > span,
+.visual-footnote {
+  color: #505b6a;
+}
+
+/* Navigation innerhalb der Produktvorschau */
+button[data-preview-select] {
+  color: #505b6a;
+}
+
+/* Überschriften und Funktionsbeschreibungen */
+.feature-section h2 span,
+.feature-section article p {
+  color: #505b6a;
+}
+
+/* Footer */
+.footer-brand .brand-light,
+.footer-grid > div:first-child > p,
+.footer-bottom > span,
+.footer-bottom .consent-footer-link {
+  color: #505b6a;
+}
+
