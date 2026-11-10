@@ -176,3 +176,10 @@ button[data-preview-select] {
 .visual-label span[data-preview-counter] {
   color: #505b6a;
 }
+
+/* WCAG 2.2 AA – Preis- und Warenkorbtexte */
+.price-disclaimer,
+.summary-small,
+.summary-small a {
+  color: #505b6a !important;
+}
