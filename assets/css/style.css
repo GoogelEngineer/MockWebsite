@@ -172,4 +172,7 @@ button[data-preview-select] {
 .footer-bottom .consent-footer-link {
   color: #505b6a;
 }
-
+/* WCAG 2.2 AA – Vorschauzähler */
+.visual-label span[data-preview-counter] {
+  color: #505b6a;
+}
